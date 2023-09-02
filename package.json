@@ -10,8 +10,13 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "eslint": "^8.48.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "eslint-plugin-react": "^7.33.2",
     "jest": "^29.6.4",
-    "nodemon": "^3.0.1"
+    "nodemon": "^3.0.1",
+    "prettier": "^3.0.3"
   },
   "dependencies": {
     "cors": "^2.8.5",
