@@ -1,0 +1,9 @@
+post http://localhost:3003/api/blogs
+Content-Type: application/json
+
+{
+    "title": "REST in VS Code",
+    "author": "Samantha",
+    "url": "www.code.com",
+    "likes": 17
+}
