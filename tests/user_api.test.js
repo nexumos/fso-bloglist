@@ -38,6 +38,19 @@ describe("when there is initially one user in db", () => {
     expect(usernames).toContain(newUser.username);
   });
 
+  test("user is returned as json", async () => {
+    await api
+      .get("/api/users")
+      .expect(200)
+      .expect("Content-Type", /application\/json/);
+  });
+
+  test("user has an 'id' property", async () => {
+    const response = await api.get("/api/users");
+
+    expect(response.body[0].id).toBeDefined();
+  });
+
   afterAll(async () => {
     await mongoose.connection.close();
   });

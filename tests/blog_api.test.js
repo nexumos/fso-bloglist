@@ -27,7 +27,7 @@ describe("when there are initially two blogs in db", () => {
     expect(response.body[0].id).toBeDefined();
   });
 
-  test("blogs can be posted", async () => {
+  test("blogs can be created", async () => {
     const blogToPost = {
       title: "My very new blog",
       author: "Ricardo",
@@ -37,6 +37,19 @@ describe("when there are initially two blogs in db", () => {
     await api.post("/api/blogs").send(blogToPost);
     const blogsAfter = await helper.blogsInDb();
     expect(blogsAfter).toHaveLength(helper.initialBlogs.length + 1);
+  });
+
+  test("created blogs have a 'user' property", async () => {
+    const blogToPost = {
+      title: "My very new blog",
+      author: "Ricardo",
+      url: "www.blog.com",
+      likes: 0,
+    };
+    await api.post("/api/blogs").send(blogToPost);
+    const newBlog = await Blog.findOne({ title: "My very new blog" });
+    console.log(newBlog.user);
+    expect(newBlog.user).toBeDefined();
   });
 
   test("there are two blogs", async () => {
