@@ -1,5 +1,6 @@
 post http://localhost:3003/api/blogs
 Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIASsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFuZXdvbmUiLCJpZCI6IjY0ZjRhOWIxNjQwMzNjZDJhM2RiOGZkYiIsImlhdCI6MTY5Mzc1NjgzNH0.zSkvH3uFNRWSp86hESJRty9kNU-0HhMSqGX6bEUabG8
 
 {
     "title": "REST in VS Code",
